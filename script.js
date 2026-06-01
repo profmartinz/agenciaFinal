@@ -28,9 +28,14 @@ input.addEventListener("keydown", function (e) {
 function enviar() {
 
     let texto = input.value.trim();
-    console.log("Texto original:", texto);
 
-    if (texto === "") return;
+    texto = texto.trim();
+    texto = texto.toLowerCase();
+    texto = texto.replace(/[.,!?]/g, "");
+
+    if (texto === "") {
+        return;
+    }
     
     chatBox.innerHTML += "<div class='usuario'>" + texto + "</div>";
 
@@ -43,9 +48,7 @@ function enviar() {
 
 function responder(texto) {
 
-    texto = texto.toLowerCase();
-
-    let palavras = texto.split(" ");
+     let palavras = texto.split(" ");
 
     if (palavras.includes("oi") || palavras.includes("olá")) {
         return "Olá! Como posso ajudar?";
