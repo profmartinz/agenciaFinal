@@ -37,7 +37,8 @@ function enviar() {
         return;
     }
     
-    chatBox.innerHTML += "<div class='usuario'>" + texto + "</div>";
+    let mensagemUsuario = "<div class='usuario'>" + texto + "</div>";
+    chatBox.innerHTML += mensagemUsuario;
 
     input.value = "";
 
